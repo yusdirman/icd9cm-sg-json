@@ -1,0 +1,110 @@
+[
+  {
+    "id": "ch0",
+    "chapter": "0",
+    "codeRange": "00",
+    "title": "Procedures and interventions, not elsewhere classified"
+  },
+  {
+    "id": "ch1",
+    "chapter": "1",
+    "codeRange": "01-05",
+    "title": "Operations on the nervous system"
+  },
+  {
+    "id": "ch2",
+    "chapter": "2",
+    "codeRange": "06-07",
+    "title": "Operations on the endocrine system"
+  },
+  {
+    "id": "ch3",
+    "chapter": "3",
+    "codeRange": "08-16",
+    "title": "Operations on the eye"
+  },
+  {
+    "id": "ch3A",
+    "chapter": "3A",
+    "codeRange": "17",
+    "title": "Other miscellaneous diagnostic and therapeutic procedures"
+  },
+  {
+    "id": "ch4",
+    "chapter": "4",
+    "codeRange": "18-20",
+    "title": "Operations on the ear"
+  },
+  {
+    "id": "ch5",
+    "chapter": "5",
+    "codeRange": "21-29",
+    "title": "Operations on the nose, mouth, and pharynx"
+  },
+  {
+    "id": "ch6",
+    "chapter": "6",
+    "codeRange": "30-34",
+    "title": "Operations on the respiratory system"
+  },
+  {
+    "id": "ch7",
+    "chapter": "7",
+    "codeRange": "35-39",
+    "title": "Operations on the cardiovascular system"
+  },
+  {
+    "id": "ch8",
+    "chapter": "8",
+    "codeRange": "40-41",
+    "title": "Operations on the hemic and lymphatic system"
+  },
+  {
+    "id": "ch9",
+    "chapter": "9",
+    "codeRange": "42-54",
+    "title": "Operations on the digestive system"
+  },
+  {
+    "id": "ch10",
+    "chapter": "10",
+    "codeRange": "55-59",
+    "title": "Operations on the urinary system"
+  },
+  {
+    "id": "ch11",
+    "chapter": "11",
+    "codeRange": "60-64",
+    "title": "Operations on the male genital organs"
+  },
+  {
+    "id": "ch12",
+    "chapter": "12",
+    "codeRange": "65-71",
+    "title": "Operations on the female genital organs"
+  },
+  {
+    "id": "ch13",
+    "chapter": "13",
+    "codeRange": "72-75",
+    "title": "Obstetrical procedures"
+  },
+  {
+    "id": "ch14",
+    "chapter": "14",
+    "codeRange": "76-84",
+    "title": "Operations on the musculoskeletal system"
+  },
+  {
+    "id": "ch15",
+    "chapter": "15",
+    "codeRange": "85-86",
+    "title": "Operations on the integumentary system"
+  },
+  {
+    "id": "ch16",
+    "chapter": "16",
+    "codeRange": "87-99",
+    "title": "Miscellaneous diagnostic and therapeutic procedures"
+  }
+]
