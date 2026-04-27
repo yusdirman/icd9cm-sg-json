@@ -32,3 +32,5 @@ A lightweight, lightning-fast static web application for searching, viewing, and
 ├── icd9cm_chapters.json     # The raw dataset containing all ICD-9-CM chapters 
 ├── icd9cm.pdf               # The source document for this project
 └── README.md                # Project documentation
+```
+<img width="1413" height="789" alt="Screenshot from 2026-04-27 13-40-26" src="https://github.com/user-attachments/assets/5a2fde3e-da04-4261-ac84-c09a0d2258bc" />
