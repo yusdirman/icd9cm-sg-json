@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICD-9-CM Search System (Static)</title>
+    <!-- Include Fuse.js for Fuzzy Search -->
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.3.0"></script>    -->
+    <style>
+         :root {
+            --primary: #2563eb;
+            --bg: #f8fafc;
+            --border: #e2e8f0;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+        
+        .header {
+            margin-bottom: 20px;
+        }
+        
+        .loading-container {
+            background-color: #e0e7ff;
+            border: 1px solid #93c5fd;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            color: #1e40af;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .search-bar {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+        
+        .search-bar:disabled {
+            background-color: #e2e8f0;
+            cursor: not-allowed;
+        }
+        
+        .main-content {
+            display: flex;
+            gap: 20px;
+            flex: 1;
+            overflow: hidden;
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+            }
+        }
+        
+        .table-container {
+            flex: 2;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            overflow-y: auto;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th,
+        td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        th {
+            background-color: #f1f5f9;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        
+        tr:hover {
+            background-color: #f8fafc;
+            cursor: pointer;
+        }
+        
+        tr.selected {
+            background-color: #eff6ff;
+        }
+        
+        .is-header {
+            font-weight: bold;
+            background-color: #fdfcd3;
+        }
+        
+        .details-panel {
+            flex: 1;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .details-content {
+            flex: 1;
+            overflow-y: auto;
+            line-height: 1.5;
+        }
+        
+        .copy-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background-color 0.2s;
+        }
+        
+        .copy-btn:disabled {
+            background-color: #94a3b8;
+            cursor: not-allowed;
+        }
+        
+        .copy-btn:hover:not(:disabled) {
+            background-color: #1d4ed8;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 40px;
+            color: #64748b;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h2>ICD-9-CM Procedure Search</h2>
+
+        <div id="loadingIndicator" class="loading-container">
+            ⏳ Loading data... Please wait.
+        </div>
+
+        <input type="text" id="searchInput" class="search-bar" placeholder="Search by code, title, or includes... (e.g. 'lapro')" disabled>
+    </div>
+
+    <div class="main-content">
+        <div class="table-container">
+            <table id="dataTable">
+                <thead>
+                    <tr>
+                        <th style="width: 100px;">Code</th>
+                        <th>Title / Description</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <tr>
+                        <td colspan="2" class="empty-state">Initializing...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="details-panel">
+            <h3>Procedure Details</h3>
+            <div id="detailsContent" class="details-content">
+                <p style="color: #64748b;">Select a procedure from the table to view details.</p>
+            </div>
+            <button id="copyBtn" class="copy-btn" disabled>📋 Copy Code</button>
+        </div>
+    </div>
+
+    <script>
+        let procedures = [];
+        let fuse; // Variable to hold the Fuse instance
+        let selectedCode = null;
+
+        const loadingIndicator = document.getElementById('loadingIndicator');
+        const searchInput = document.getElementById('searchInput');
+        const tableBody = document.getElementById('tableBody');
+        const detailsContent = document.getElementById('detailsContent');
+        const copyBtn = document.getElementById('copyBtn');
+
+        // Fetch data statically on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            // Notice the relative path instead of an API call
+            fetch('/icd9cm_procedures')
+                .then(response => {
+                    if (!response.ok) throw new Error('Network response was not ok');
+                    return response.json();
+                })
+                .then(data => {
+                    procedures = data;
+
+                    // Initialize Fuse.js for fuzzy searching
+                    const options = {
+                        keys: [{
+                            name: 'code',
+                            weight: 0.7
+                        }, {
+                            name: 'title',
+                            weight: 0.5
+                        }, {
+                            name: 'includes',
+                            weight: 0.3
+                        }],
+                        threshold: 0.3,
+                        ignoreLocation: true,
+                        minMatchCharLength: 2
+                    };
+                    console.log(procedures);
+                    console.log("Initializing Fuse.js with options:", options);
+                    let fuse = new Fuse(procedures, options);
+
+                    // Enable search UI and hide loading state
+                    searchInput.disabled = false;
+                    loadingIndicator.style.display = 'none';
+
+                    // Initial render (limit to 300 to keep the DOM light)
+                    renderTable(procedures.slice(0, 300));
+                })
+                .catch(err => {
+                    console.error("Fetch error:", err);
+                    loadingIndicator.innerHTML = "❌ Error loading data.<br><br><small><i>Note: If you are running this locally, you must use a local web server (like VS Code Live Server) because browsers block fetching local files via 'file://' protocols.</i></small>";
+                    loadingIndicator.style.backgroundColor = "#fee2e2";
+                    loadingIndicator.style.borderColor = "#f87171";
+                    loadingIndicator.style.color = "#b91c1c";
+
+                    tableBody.innerHTML = '<tr><td colspan="2" class="empty-state">Failed to load data.</td></tr>';
+                });
+        });
+
+        // Debounce function to prevent the search from running on every single millisecond of typing
+        function debounce(func, wait) {
+            let timeout;
+            return function(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // Fuzzy Search filtering (Debounced to 250ms)
+        const performSearch = debounce((query) => {
+            if (query.trim() === '') {
+                renderTable(procedures.slice(0, 300));
+                return;
+            }
+
+            const results = fuse.search(query);
+            // Limit results to 300 to ensure the browser never freezes
+            const filtered = results.slice(0, 300).map(result => result.item);
+
+            renderTable(filtered);
+        }, 250); // 250ms delay
+
+        searchInput.addEventListener('input', (e) => {
+            performSearch(e.target.value);
+        });
+
+        function renderTable(data) {
+            tableBody.innerHTML = '';
+            if (data.length === 0) {
+                tableBody.innerHTML = '<tr><td colspan="2" class="empty-state">No results found.</td></tr>';
+                return;
+            }
+
+            data.forEach((item) => {
+                const tr = document.createElement('tr');
+                if (item.isHeader) tr.classList.add('is-header');
+
+                tr.innerHTML = `
+                    <td>${item.code || ''}</td>
+                    <td>${item.title || ''}</td>
+                `;
+
+                tr.addEventListener('click', () => {
+                    document.querySelectorAll('#tableBody tr').forEach(row => row.classList.remove('selected'));
+                    tr.classList.add('selected');
+                    showDetails(item);
+                });
+
+                tableBody.appendChild(tr);
+            });
+        }
+
+        function showDetails(item) {
+            selectedCode = item.code;
+            copyBtn.disabled = !selectedCode;
+            copyBtn.innerText = "📋 Copy Code";
+
+            let html = `
+                <p><strong>Code:</strong> ${item.code || 'N/A'}</p>
+                <p><strong>Title:</strong> ${item.title || 'N/A'}</p>
+                <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 15px 0;">
+            `;
+
+            if (item.includes) html += `<p><strong>Includes:</strong> ${item.includes}</p>`;
+            if (item.excludes) html += `<p><strong>Excludes:</strong> ${item.excludes}</p>`;
+            if (item.note) html += `<p><strong>Note:</strong> ${item.note}</p>`;
+            if (item.code_also) html += `<p><strong>Code Also:</strong> ${item.code_also}</p>`;
+
+            detailsContent.innerHTML = html;
+        }
+
+        // Copy to clipboard using modern Clipboard API
+        copyBtn.addEventListener('click', () => {
+            if (selectedCode) {
+                if (navigator.clipboard && window.isSecureContext) {
+                    navigator.clipboard.writeText(selectedCode).then(onCopySuccess).catch(fallbackCopy);
+                } else {
+                    fallbackCopy();
+                }
+            }
+        });
+
+        function fallbackCopy() {
+            let textArea = document.createElement("textarea");
+            textArea.value = selectedCode;
+            textArea.style.position = "fixed";
+            textArea.style.left = "-999999px";
+            textArea.style.top = "-999999px";
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                onCopySuccess();
+            } catch (err) {
+                console.error('Fallback: Oops, unable to copy', err);
+            }
+            textArea.remove();
+        }
+
+        function onCopySuccess() {
+            copyBtn.innerText = "✅ Copied!";
+            setTimeout(() => copyBtn.innerText = "📋 Copy Code", 2000);
+        }
+    </script>
+</body>
+
+</html>

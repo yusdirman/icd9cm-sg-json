@@ -1,32 +1,34 @@
-# icd9cm-sg-json
-json file for icd9cm-sg (procedures)
+# ICD-9-CM Procedure Search System
 
+A lightweight, lightning-fast static web application for searching, viewing, and copying ICD-9-CM procedure codes. This tool is built entirely with HTML, CSS, and Vanilla JavaScript, requiring zero backend server to run.
 
-## Structure
+## Features
 
-```js
-{
-    "code": "00.01",
-    "title": "Therapeutic ultrasound of vessels of head and neck",
-    "isHeader": false,
-    "chapter": "ch0",
-    "includes": "Anti-restenotic ultrasound, Intravascular non-ablative ultrasound",
-    "note": null,
-    "code_also": null,
-    "excludes": "diagnostic ultrasound of: eye (95.13), head and neck (88.71), that of inner ear (20.79); ultrasonic: angioplasty of non-coronary vessel (39.50), embolectomy (38.01, 38.02), endarterectomy (38.11, 38.12), thrombectomy (38.01, 38.02)",
-    "exclude_codes": [
-      "95.13",
-      "88.71",
-      "20.79",
-      "39.50",
-      "38.01",
-      "38.02",
-      "38.11",
-      "38.12"
-    ]
-  }
-```
+* 🔍 **Fuzzy Searching:** Powered by [Fuse.js](https://fusejs.io/), the search bar tolerates typos and minor misspellings (e.g., searching "lapro" will still find "laparoscopic").
 
-source document: 
+* ⚡ **Real-Time & Debounced:** Search results update instantly as you type, with built-in debouncing to ensure smooth performance even on older devices.
 
-https://w2.med.cmu.ac.th/medrec/files/download/icd9cm.pdf
+* 📖 **Detailed Context:** Click on any procedure code to instantly view its full title, inclusion terms, exclusion terms, and special coding notes.
+
+* 📋 **One-Click Copy:** Easily copy the selected ICD-9 code directly to your system clipboard for use in other applications.
+
+* 🚀 **Zero-Backend:** Runs 100% in the browser. No databases or Node.js servers to maintain.
+
+## Tech Stack
+
+* **HTML5 & CSS3** (Responsive design, custom UI)
+
+* **Vanilla JavaScript** (ES6+)
+
+* **Fuse.js** (Client-side fuzzy search)
+
+* **JSON** (Data storage)
+
+## File Structure
+
+```text
+├── index.html               # Main application interface and logic
+├── icd9cm_procedures.json   # The raw dataset containing all ICD-9-CM codes
+├── icd9cm_chapters.json     # The raw dataset containing all ICD-9-CM chapters 
+├── icd9cm.pdf               # The source document for this project
+└── README.md                # Project documentation
