@@ -208,7 +208,7 @@
         // Fetch data statically on page load
         window.addEventListener('DOMContentLoaded', () => {
             // Notice the relative path instead of an API call
-            fetch('/icd9cm_procedures')
+            fetch('icd9cm_procedures.json')
                 .then(response => {
                     if (!response.ok) throw new Error('Network response was not ok');
                     return response.json();
