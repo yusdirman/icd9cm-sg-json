@@ -234,7 +234,7 @@
                     };
                     console.log(procedures);
                     console.log("Initializing Fuse.js with options:", options);
-                    let fuse = new Fuse(procedures, options);
+                    fuse = new Fuse(procedures, options);
 
                     // Enable search UI and hide loading state
                     searchInput.disabled = false;
