@@ -41850,11 +41850,341 @@
     "exclude_codes": []
   },
   {
+    "code": "93.0",
+    "title": "Diagnostic physical therapy",
+    "isHeader": true,
+    "chapter": "ch16",
+    "includes": null,
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
+  },
+  {
+    "code": "93.01",
+    "title": "Functional evaluation",
+    "isHeader": false,
+    "chapter": "ch16",
+    "includes": null,
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
+  },
+  {
+    "code": "93.02",
+    "title": "Orthotic evaluation",
+    "isHeader": false,
+    "chapter": "ch16",
+    "includes": null,
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
+  },
+  {
+    "code": "93.03",
+    "title": "Prosthetic evaluation",
+    "isHeader": false,
+    "chapter": "ch16",
+    "includes": null,
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
+  },
+  {
+    "code": "93.04",
+    "title": "Manual testing of muscle function",
+    "isHeader": false,
+    "chapter": "ch16",
+    "includes": null,
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
+  },
+  {
+    "code": "93.08",
+    "title": "Electromyography",
+    "isHeader": false,
+    "chapter": "ch16",
+    "includes": "Excludes: that of urethral sphincter (89.23), that of eye (95.25)",
+    "note": null,
+    "code_also": null,
+    "excludes": "that of urethral sphincter (89.23), that of eye (95.25)",
+    "exclude_codes": [
+      "89.23",
+      "95.25"
+    ]
+  },
+  {
+    "code": "93.1",
+    "title": "Physical therapy exercises",
+    "isHeader": true,
+    "chapter": "ch16",
+    "includes": null,
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
+  },
+  {
+    "code": "93.11",
+    "title": "Assisting exercise",
+    "isHeader": false,
+    "chapter": "ch16",
+    "includes": null,
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
+  },
+  {
+    "code": "93.12",
+    "title": "Other active musculoskeletal exercise",
+    "isHeader": false,
+    "chapter": "ch16",
+    "includes": null,
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
+  },
+  {
+    "code": "93.13",
+    "title": "Resistive exercise",
+    "isHeader": false,
+    "chapter": "ch16",
+    "includes": null,
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
+  },
+  {
+    "code": "93.15",
+    "title": "Joint mobilization",
+    "isHeader": false,
+    "chapter": "ch16",
+    "includes": null,
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
+  },
+  {
+    "code": "93.2",
+    "title": "Other physical therapy musculoskeletal manipulation",
+    "isHeader": true,
+    "chapter": "ch16",
+    "includes": null,
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
+  },
+  {
+    "code": "93.21",
+    "title": "Manual and mechanical traction",
+    "isHeader": false,
+    "chapter": "ch16",
+    "includes": null,
+    "note": null,
+    "code_also": null,
+    "excludes": "skeletal traction (93.41-93.44)",
+    "exclude_codes": [
+      "93.41-93.44"
+    ]
+  },
+  {
+    "code": "93.22",
+    "title": "Ambulation and gait training",
+    "isHeader": false,
+    "chapter": "ch16",
+    "includes": null,
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
+  },
+  {
+    "code": "93.23",
+    "title": "Fitting of orthotic device",
+    "isHeader": false,
+    "chapter": "ch16",
+    "includes": null,
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
+  },
+  {
+    "code": "93.27",
+    "title": "Stretching of muscle or tendon",
+    "isHeader": false,
+    "chapter": "ch16",
+    "includes": null,
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
+  },
+  {
     "code": "93.3",
     "title": "Other physical therapy procedures",
     "isHeader": true,
     "chapter": "ch16",
     "includes": null,
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
+  },
+  {
+    "code": "93.31",
+    "title": "Massage",
+    "isHeader": false,
+    "chapter": "ch16",
+    "includes": "Cardiac massage (external) (closed chest) (99.63)",
+    "note": null,
+    "code_also": null,
+    "excludes": "cardiac massage (external) (closed chest) (99.63), prostatic massage (99.94), rectal massage (99.93)",
+    "exclude_codes": [
+      "99.63",
+      "99.94",
+      "99.93"
+    ]
+  },
+  {
+    "code": "93.34",
+    "title": "Diathermy",
+    "isHeader": false,
+    "chapter": "ch16",
+    "includes": null,
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
+  },
+  {
+    "code": "93.36",
+    "title": "Cardiac rehabilitation",
+    "isHeader": false,
+    "chapter": "ch16",
+    "includes": null,
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
+  },
+  {
+    "code": "93.4",
+    "title": "Skeletal traction and other traction",
+    "isHeader": true,
+    "chapter": "ch16",
+    "includes": null,
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
+  },
+  {
+    "code": "93.41",
+    "title": "Spinal traction using skull device",
+    "isHeader": false,
+    "chapter": "ch16",
+    "includes": "Crutchfield tongs, Halo caliper, Vinke tongs",
+    "note": null,
+    "code_also": null,
+    "excludes": "insertion of tongs or halo traction device (02.94)",
+    "exclude_codes": [
+      "02.94"
+    ]
+  },
+  {
+    "code": "93.5",
+    "title": "Other immobilization, pressure, and attention to wound",
+    "isHeader": true,
+    "chapter": "ch16",
+    "includes": null,
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
+  },
+  {
+    "code": "93.51",
+    "title": "Application of plaster jacket",
+    "isHeader": false,
+    "chapter": "ch16",
+    "includes": "Minerva jacket",
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
+  },
+  {
+    "code": "93.53",
+    "title": "Application of other cast",
+    "isHeader": false,
+    "chapter": "ch16",
+    "includes": null,
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
+  },
+  {
+    "code": "93.54",
+    "title": "Application of splint",
+    "isHeader": false,
+    "chapter": "ch16",
+    "includes": "Plaster splint, Trayer splint",
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
+  },
+  {
+    "code": "93.6",
+    "title": "Osteopathic manipulative treatment",
+    "isHeader": true,
+    "chapter": "ch16",
+    "includes": null,
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
+  },
+  {
+    "code": "93.7",
+    "title": "Speech and reading rehabilitation and blind rehabilitation",
+    "isHeader": true,
+    "chapter": "ch16",
+    "includes": null,
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
+  },
+  {
+    "code": "93.8",
+    "title": "Other rehabilitation therapy",
+    "isHeader": true,
+    "chapter": "ch16",
+    "includes": null,
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
+  },
+  {
+    "code": "93.83",
+    "title": "Occupational therapy",
+    "isHeader": false,
+    "chapter": "ch16",
+    "includes": "Activities of daily living (ADL) training",
     "note": null,
     "code_also": null,
     "excludes": null,
@@ -41896,6 +42226,20 @@
     "exclude_codes": []
   },
   {
+    "code": "93.96",
+    "title": "Other oxygen enrichment",
+    "isHeader": false,
+    "chapter": "ch16",
+    "includes": "Catalytic oxygen therapy, Oxygenation NOS",
+    "note": null,
+    "code_also": null,
+    "excludes": "oxygenation wound (93.59), SuperSaturated oxygen therapy (00.49)",
+    "exclude_codes": [
+      "93.59",
+      "00.49"
+    ]
+  },
+  {
     "code": "94",
     "title": "Psychiatric interviews, consultations, and evaluations",
     "isHeader": true,
@@ -41907,8 +42251,107 @@
     "exclude_codes": []
   },
   {
+    "code": "94.0",
+    "title": "Psychologic evaluation and testing",
+    "isHeader": true,
+    "chapter": "ch16",
+    "includes": null,
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
+  },
+  {
+    "code": "94.1",
+    "title": "Psychiatric interviews, consultations, and evaluations",
+    "isHeader": true,
+    "chapter": "ch16",
+    "includes": null,
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
+  },
+  {
+    "code": "94.2",
+    "title": "Psychiatric somatotherapy",
+    "isHeader": true,
+    "chapter": "ch16",
+    "includes": null,
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
+  },
+  {
+    "code": "94.25",
+    "title": "Other electroshock therapy",
+    "isHeader": false,
+    "chapter": "ch16",
+    "includes": "Electroconvulsive therapy (ECT)",
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
+  },
+  {
+    "code": "94.3",
+    "title": "Individual psychotherapy",
+    "isHeader": true,
+    "chapter": "ch16",
+    "includes": null,
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
+  },
+  {
+    "code": "94.6",
+    "title": "Alcohol and drug rehabilitation and detoxification",
+    "isHeader": true,
+    "chapter": "ch16",
+    "includes": null,
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
+  },
+  {
     "code": "95",
     "title": "Ophthalmologic and otologic diagnosis and treatment",
+    "isHeader": true,
+    "chapter": "ch16",
+    "includes": null,
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
+  },
+  {
+    "code": "95.0",
+    "title": "General and subjective eye examination",
+    "isHeader": true,
+    "chapter": "ch16",
+    "includes": null,
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
+  },
+  {
+    "code": "95.1",
+    "title": "Examinations of form and structure of eye",
+    "isHeader": true,
+    "chapter": "ch16",
+    "includes": null,
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
+  },
+  {
+    "code": "95.4",
+    "title": "Nonoperative procedures related to hearing",
     "isHeader": true,
     "chapter": "ch16",
     "includes": null,
@@ -41956,6 +42399,61 @@
     "isHeader": false,
     "chapter": "ch16",
     "includes": "Insertion of Sengstaken tube",
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
+  },
+  {
+    "code": "96.1",
+    "title": "Other nonoperative insertion (packing)",
+    "isHeader": true,
+    "chapter": "ch16",
+    "includes": null,
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
+  },
+  {
+    "code": "96.2",
+    "title": "Nonoperative dilation and manipulation",
+    "isHeader": true,
+    "chapter": "ch16",
+    "includes": null,
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
+  },
+  {
+    "code": "96.3",
+    "title": "Nonoperative gastric cooling, freezing, gastric lavage, and gavage",
+    "isHeader": true,
+    "chapter": "ch16",
+    "includes": null,
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
+  },
+  {
+    "code": "96.4",
+    "title": "Nonoperative irrigation of biliary, pancreatic, and digestive tracts",
+    "isHeader": true,
+    "chapter": "ch16",
+    "includes": null,
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
+  },
+  {
+    "code": "96.5",
+    "title": "Other nonoperative irrigation of wound, catheter, and other tract",
+    "isHeader": true,
+    "chapter": "ch16",
+    "includes": null,
     "note": null,
     "code_also": null,
     "excludes": null,
@@ -42023,6 +42521,118 @@
     ]
   },
   {
+    "code": "97.0",
+    "title": "Nonoperative replacement of gastrointestinal appliances",
+    "isHeader": true,
+    "chapter": "ch16",
+    "includes": null,
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
+  },
+  {
+    "code": "97.1",
+    "title": "Nonoperative replacement of musculoskeletal and integumentary appliances",
+    "isHeader": true,
+    "chapter": "ch16",
+    "includes": null,
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
+  },
+  {
+    "code": "97.2",
+    "title": "Other nonoperative replacement",
+    "isHeader": true,
+    "chapter": "ch16",
+    "includes": null,
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
+  },
+  {
+    "code": "97.3",
+    "title": "Nonoperative removal of therapeutic device from head and neck",
+    "isHeader": true,
+    "chapter": "ch16",
+    "includes": null,
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
+  },
+  {
+    "code": "97.4",
+    "title": "Nonoperative removal of therapeutic device from thorax",
+    "isHeader": true,
+    "chapter": "ch16",
+    "includes": null,
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
+  },
+  {
+    "code": "97.44",
+    "title": "Nonoperative removal of heart assist system",
+    "isHeader": false,
+    "chapter": "ch16",
+    "includes": "Explantation [removal] of percutaneous external heart assist device",
+    "note": null,
+    "code_also": null,
+    "excludes": "explantation [removal] of external heart assist system (37.64)",
+    "exclude_codes": [
+      "37.64"
+    ]
+  },
+  {
+    "code": "97.5",
+    "title": "Nonoperative removal of therapeutic device from digestive system",
+    "isHeader": true,
+    "chapter": "ch16",
+    "includes": null,
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
+  },
+  {
+    "code": "97.6",
+    "title": "Nonoperative removal of therapeutic device from urinary system",
+    "isHeader": true,
+    "chapter": "ch16",
+    "includes": null,
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
+  },
+  {
+    "code": "97.7",
+    "title": "Nonoperative removal of therapeutic device from genital tract",
+    "isHeader": true,
+    "chapter": "ch16",
+    "includes": null,
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
+  },
+  {
+    "code": "97.8",
+    "title": "Other nonoperative removal of therapeutic device",
+    "isHeader": true,
+    "chapter": "ch16",
+    "includes": null,
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
+  },
+  {
     "code": "98",
     "title": "Nonoperative removal of foreign body or calculus",
     "isHeader": true,
@@ -42031,6 +42641,50 @@
     "note": null,
     "code_also": null,
     "excludes": "removal of intraluminal foreign body with incision",
+    "exclude_codes": []
+  },
+  {
+    "code": "98.0",
+    "title": "Removal of intraluminal foreign body from digestive system without incision",
+    "isHeader": true,
+    "chapter": "ch16",
+    "includes": null,
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
+  },
+  {
+    "code": "98.1",
+    "title": "Removal of intraluminal foreign body from respiratory tract without incision",
+    "isHeader": true,
+    "chapter": "ch16",
+    "includes": null,
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
+  },
+  {
+    "code": "98.2",
+    "title": "Removal of other foreign body without incision",
+    "isHeader": true,
+    "chapter": "ch16",
+    "includes": null,
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
+  },
+  {
+    "code": "98.5",
+    "title": "Extracorporeal shockwave lithotripsy [ESWL]",
+    "isHeader": true,
+    "chapter": "ch16",
+    "includes": "Lithotripsy NOS",
+    "note": null,
+    "code_also": null,
+    "excludes": null,
     "exclude_codes": []
   },
   {
@@ -42076,7 +42730,6 @@
     "code_also": null,
     "excludes": "aspirin (99.20), glycoprotein IIB/IIIA platelet inhibitor (99.20)",
     "exclude_codes": [
-      "99.20",
       "99.20"
     ]
   },
@@ -42154,6 +42807,39 @@
     "exclude_codes": [
       "00.15"
     ]
+  },
+  {
+    "code": "99.6",
+    "title": "Conversion of cardiac rhythm",
+    "isHeader": true,
+    "chapter": "ch16",
+    "includes": null,
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
+  },
+  {
+    "code": "99.60",
+    "title": "Cardiopulmonary resuscitation, not otherwise specified",
+    "isHeader": false,
+    "chapter": "ch16",
+    "includes": null,
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
+  },
+  {
+    "code": "99.63",
+    "title": "Closed chest cardiac massage",
+    "isHeader": false,
+    "chapter": "ch16",
+    "includes": "Cardiac massage NOS, Manual external cardiac massage",
+    "note": null,
+    "code_also": null,
+    "excludes": null,
+    "exclude_codes": []
   },
   {
     "code": "99.9",
